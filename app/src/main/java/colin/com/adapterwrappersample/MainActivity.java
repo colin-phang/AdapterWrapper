@@ -15,7 +15,7 @@ import java.util.List;
 import colin.com.adapterwrapper.WrapperAdapter;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView rv;
+    private RecyclerView recyclerView;
     private Button btnClear;
     private Button btnAdd;
     private MyAdapter adapter;
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rv = (RecyclerView) findViewById(R.id.rv);
+        recyclerView = (RecyclerView) findViewById(R.id.rv);
         btnClear = (Button) findViewById(R.id.btn_clear);
         btnAdd = (Button) findViewById(R.id.btn_add);
 
@@ -43,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        rv.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new MyAdapter();
 
         WrapperAdapter wrapper = new WrapperAdapter(adapter);
         TextView header = (TextView) LayoutInflater.from(this).inflate(R.layout.layout_header_1, null);
         wrapper.addHeaderView(header);
         wrapper.setEmptyView(R.layout.layout_empty);
-        rv.setAdapter(wrapper);
+        recyclerView.setAdapter(wrapper);
 
         addData();
     }
