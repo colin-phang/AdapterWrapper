@@ -16,9 +16,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     List<String> mDatas;
 
 
-    public void setDatas(List<String> mDatas) {
-        this.mDatas = mDatas;
+    public void addData(List<String> datas) {
+        if (mDatas == null)
+            setData(datas);
+        else
+            mDatas.addAll(datas);
     }
+
+    public void setData(List<String> datas) {
+        this.mDatas = datas;
+    }
+
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
