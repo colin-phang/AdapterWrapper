@@ -1,5 +1,5 @@
 # AdapterWrapper
-A AdapterWrapper for RecyclerView which can add Header/Footer or set EmptyView without modifying existed Adapter. 
+A AdapterWrapper for RecyclerView which can add Header/Footer or set EmptyView In a elegant way **without modifying existed Adapter**. 
 
 Usage
 -----
